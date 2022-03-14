@@ -1,11 +1,11 @@
 
 fun main(){
-var x=product(arrayOf(2,3,4,10))
-println(x)
-var w=alotCharacters(arrayOf("mercy",2,5.6,7.12,4.1,true))
-   println(w)
-   var z=vowels(arrayOf('a','e','i','o','u'))
-   println(z)
+product(arrayOf(2,3,4,10))
+
+alotCharacters(arrayOf("mercy",2,5.6,7.12,4.1,true))
+    var  length=vowels(arrayOf('a','b','e','i','c','o','z','u'))
+   println(length)
+
 }
 //function that takes in an array of integers and returns the product of all the elements.
 fun product(num:Array<Int>):Int{
@@ -15,6 +15,7 @@ fun product(num:Array<Int>):Int{
          multiply*=y.toInt()
       }
    }
+   println(multiply)
    return multiply
 }
 
@@ -26,11 +27,17 @@ fun alotCharacters(type:Array<Any>):Double {
          mixed+=el.toString().toDouble()
       }
    }
+   println(mixed)
    return mixed
 }
 
 //a function that takes ain an array of characters and returns the number of vowels in the array.
 fun vowels(vol:Array<Char>):Int{
-   var number=vol.count()
+   var number=0
+      vol.forEach { w->
+         if(w=='a'||w=='e'||w=='i'||w=='o'||w=='u'){
+            number++
+      }
+      }
    return number
 }
